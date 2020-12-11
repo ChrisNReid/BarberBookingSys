@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Firstname:
+  = @employee.FirstName
+%p
+  %b Lastname:
+  = @employee.LastName
+%p
+  %b Phonenumber:
+  = @employee.PhoneNumber
+
+= link_to 'Edit', edit_employee_path(@employee)
+\|
+= link_to 'Back', employees_path

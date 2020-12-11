@@ -1,0 +1,16 @@
+= form_for @employees_email do |f|
+  - if @employees_email.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@employees_email.errors.count, "error")} prohibited this employees_email from being saved:"
+      %ul
+        - @employees_email.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :Employees
+    = f.text_field :Employees
+  .field
+    = f.label :EmpEmail
+    = f.text_field :EmpEmail
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  Name: MyString
+  StartTime: 2020-12-11 19:06:35
+  EndTime: 2020-12-11 19:06:35
+  employee: one
+
+two:
+  user: two
+  Name: MyString
+  StartTime: 2020-12-11 19:06:35
+  EndTime: 2020-12-11 19:06:35
+  employee: two

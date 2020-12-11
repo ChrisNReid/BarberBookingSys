@@ -1,0 +1,207 @@
+
+!!! 5
+%html{lang: "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "author"}/
+    %link{:href => "../../assets/ico/favicon.ico", rel: "shortcut icon"}/
+    %title Theme Template for Bootstrap
+    / Bootstrap core CSS
+    %link{:href => "css/bootstrap.min.css", :rel => :stylesheet}/
+    / Barber Booking
+    %link{:href => "css/bootstrap-theme.min.css", :rel => :stylesheet}/
+    / Custom styles for this template
+    %link{:href => "css/theme.css", rel: "stylesheet"}/
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  %body{role: "document"}
+    / Fixed navbar
+    .navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => :button}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#home"} Barber Booking
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{:href => "#"} Home
+            %li
+              %a{:href => "abouts"} About
+            %li
+              %a{:href => "contact"} Contact
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                Bookings
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "reservations"} Book a slot
+                %li
+                  %a{:href => "reviews"} Reviews
+
+                %li.divider
+                %li.dropdown-header Nav header
+                %li
+                  %a{:href => "#"} Separated link
+
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                Profile
+                %b.caret
+                %ul.dropdown-menu
+                  %li
+                    -if user_signed_in?
+                      = "#{current_user.email} |"
+                      = link_to t('profile'), edit_user_registration_path
+                      = '|'
+                      = link_to t('logout'), destroy_user_session_path, method: 'delete'
+                    -else
+                      = link_to t('login'), new_user_session_path
+                      = '|'
+                      = link_to t('sign_up'), new_user_registration_path
+
+                  - flash.each do |key, value|
+                    = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
+
+
+        / /.nav-collapse
+    .container.theme-showcase{role: "main"}
+      / Main jumbotron for a primary marketing message or call to action
+      .jumbotron
+        %h1 Barber Booking
+        %p Booking your haircut today on our new online booking system.
+        %p
+          %a.btn.btn-primary.btn-lg{:href => "reservations", role: "button"} Book now »
+
+
+      .page-header
+        %h1 Alerts
+      .alert.alert-success
+        %strong Well done!
+        You successfully read this important alert message.
+      .alert.alert-info
+        %strong Heads up!
+        This alert needs your attention, but it's not super important.
+      .alert.alert-warning
+        %strong Warning!
+        Best check yo self, you're not looking too good.
+      .alert.alert-danger
+        %strong Oh snap!
+        Change a few things up and try submitting again.
+
+
+      .page-header
+        %h1 Availability
+      .progress
+        .progress-bar.progress-bar-warning{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "60", role: "progressbar", style: "width: 60%"}
+          Monday
+          %span.sr-only 60% Complete (warning)
+      .progress
+        .progress-bar.progress-bar-success{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "40", role: "progressbar", style: "width: 40%"}
+          Tuesday
+          %span.sr-only 40% Complete (success)
+      .progress
+        .progress-bar.progress-bar-success{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "20", role: "progressbar", style: "width: 20%"}
+          Wedensday
+          %span.sr-only 20% Complete(success)
+      .progress
+        .progress-bar.progress-bar-warning{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "60", role: "progressbar", style: "width: 60%"}
+          Thursday
+          %span.sr-only 60% Complete (warning)
+      .progress
+        .progress-bar.progress-bar-danger{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "80", role: "progressbar", style: "width: 85%"}
+          Friday
+          %span.sr-only 80% Complete (danger)
+      .progress
+        .progress-bar.progress-bar-danger{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "80", role: "progressbar", style: "width: 100%"}
+          Saturday
+          %span.sr-only 80% Complete (danger)
+      .progress
+        .progress-bar.progress-bar-warning{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "75", role: "progressbar", style: "width: 75%"}
+          Sunday
+          %span.sr-only 75% Complete (warning)
+
+
+      .page-header
+        %h1 List groups
+      .row
+        .col-sm-4
+          %ul.list-group
+            %li.list-group-item Cras justo odio
+        / /.col-sm-4
+
+        .col-sm-4
+          .list-group
+            %a.list-group-item.active{:href => "#"}
+              Cras justo odio
+            %a.list-group-item{:href => "#"} Dapibus ac facilisis in
+
+        / /.col-sm-4
+        .col-sm-4
+          .list-group
+            %a.list-group-item.active{:href => "#"}
+              %h4.list-group-item-heading List group item heading
+              %p.list-group-item-text Donec id elit non mi metus
+        / /.col-sm-4
+      .page-header
+        %h1 Panels
+      .row
+        .col-sm-4
+          .panel.panel-default
+            .panel-heading
+              %h3.panel-title Panel title
+            .panel-body
+              Panel content
+          .panel.panel-primary
+            .panel-heading
+              %h3.panel-title Panel title
+            .panel-body
+              Panel content
+        / /.col-sm-4
+        .col-sm-4
+          .panel.panel-success
+            .panel-heading
+              %h3.panel-title Panel title
+            .panel-body
+              Panel content
+          .panel.panel-info
+            .panel-heading
+              %h3.panel-title Panel title
+            .panel-body
+              Panel content
+        / /.col-sm-4
+        .col-sm-4
+          .panel.panel-warning
+            .panel-heading
+              %h3.panel-title Panel title
+            .panel-body
+              Panel content
+          .panel.panel-danger
+            .panel-heading
+              %h3.panel-title Panel title
+            .panel-body
+              Panel content
+        / /.col-sm-4
+
+
+      .page-header
+        %h1 Wells
+      .well
+        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.
+    / /container
+    /
+      Bootstrap core JavaScript
+      \==================================================
+    / Placed at the end of the document so the pages load faster
+    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}
+    %script{src: "js/bootstrap.min.js"}
+    %script{src: "js/docs.min.js"}
