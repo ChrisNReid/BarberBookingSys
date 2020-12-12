@@ -6,7 +6,6 @@
 %table
   %thead
     %tr
-      %th User
       %th Name
       %th Title
       %th Description
@@ -17,14 +16,11 @@
   %tbody
     - @reviews.each do |review|
       %tr
-        %td= review.user
         %td= review.name
         %td= review.title
         %td= review.description
         %td= link_to 'Show', review
-        %td= link_to 'Edit', edit_review_path(review)
-        %td= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' }
-
+        
 %br
 
 = link_to 'New Review', new_review_path

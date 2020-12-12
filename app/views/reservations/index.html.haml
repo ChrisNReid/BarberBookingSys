@@ -6,11 +6,10 @@
   %table
     %thead
       %tr
-        %th User ID
+
         %th Name
         %th Start Time
         %th End Time
-        %th Employee
         %th
         %th
         %th
@@ -18,11 +17,11 @@
     %tbody
       - @reservations.each do |reservation|
         %tr
-          %td= reservation.user
+
           %td= reservation.Name
           %td= reservation.StartTime
           %td= reservation.EndTime
-          %td= reservation.employee
+
           %td= link_to 'Show', reservation
 
   %p To cancel your booking <a href='/contact'>Contact Us here</a>

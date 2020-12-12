@@ -1,21 +1,23 @@
-%p#notice= notice
+.container.theme-showcase{role: "main"}
+  .jumbotron
+    %h1 Your Order
+    %p All the little details, see you soon.
 
-%p
-  %b User:
-  = @reservation.user
-%p
-  %b Name:
-  = @reservation.Name
-%p
-  %b Starttime:
-  = @reservation.StartTime
-%p
-  %b Endtime:
-  = @reservation.EndTime
-%p
-  %b Employee:
-  = @reservation.employee
+  %p#notice= notice
 
-= link_to 'Edit', edit_reservation_path(@reservation)
-\|
-= link_to 'Back', reservations_path
+  %p
+    %b Location:
+    = '1 High Street, Guildford, Surrey'
+  %p
+    %b Name:
+    = @reservation.Name
+  %p
+    %b Start Time:
+    = @reservation.StartTime
+  %p
+    %b End Time:
+    = @reservation.EndTime
+
+  = link_to 'Edit', edit_reservation_path(@reservation)
+  \|
+  = link_to 'Back', reservations_path

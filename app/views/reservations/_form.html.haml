@@ -7,9 +7,6 @@
           %li= message
 
   .field
-    = f.label :user
-    = f.text_field :user_id
-  .field
     = f.label :Name
     = f.text_field :Name
   .field
@@ -19,7 +16,7 @@
     = f.label :EndTime
     = f.datetime_select :EndTime
   .field
-    = f.label :employee
+    = f.label :'employee (1 = John, 2 = Jane, 3 = Jaden)'
     = f.text_field :employee_id
   .actions
     = f.submit 'Save'

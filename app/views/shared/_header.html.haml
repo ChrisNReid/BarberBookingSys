@@ -8,6 +8,7 @@
     = link_to t('login'), new_user_session_path
     = '|'
     = link_to t('sign_up'), new_user_registration_path
-
+%br
+%br
 - flash.each do |key, value|
   = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
