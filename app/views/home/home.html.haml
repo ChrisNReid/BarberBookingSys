@@ -5,20 +5,9 @@
     %meta{:charset => "utf-8"}/
     %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
-    %meta{content: "", name: "description"}/
-    %meta{content: "", name: "author"}/
-    %link{:href => "../../assets/ico/favicon.ico", rel: "shortcut icon"}/
-    %title Theme Template for Bootstrap
-    / Bootstrap core CSS
-    %link{:href => "css/bootstrap.min.css", :rel => :stylesheet}/
+
     / Barber Booking
-    %link{:href => "css/bootstrap-theme.min.css", :rel => :stylesheet}/
-    / Custom styles for this template
-    %link{:href => "css/theme.css", rel: "stylesheet"}/
-    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
-    /[if lt IE 9]
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
   %body{role: "document"}
     / Fixed navbar
     .navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
@@ -47,11 +36,6 @@
                   %a{:href => "reservations"} Book a slot
                 %li
                   %a{:href => "reviews"} Reviews
-
-                %li.divider
-                %li.dropdown-header Nav header
-                %li
-                  %a{:href => "#"} Separated link
 
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
@@ -83,24 +67,9 @@
           %a.btn.btn-primary.btn-lg{:href => "reservations", role: "button"} Book now »
 
 
-      .page-header
-        %h1 Alerts
-      .alert.alert-success
-        %strong Well done!
-        You successfully read this important alert message.
-      .alert.alert-info
-        %strong Heads up!
-        This alert needs your attention, but it's not super important.
-      .alert.alert-warning
-        %strong Warning!
-        Best check yo self, you're not looking too good.
-      .alert.alert-danger
-        %strong Oh snap!
-        Change a few things up and try submitting again.
-
 
       .page-header
-        %h1 Availability
+        %h1 Weekly Availability
       .progress
         .progress-bar.progress-bar-warning{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "60", role: "progressbar", style: "width: 60%"}
           Monday
@@ -132,76 +101,8 @@
 
 
       .page-header
-        %h1 List groups
-      .row
-        .col-sm-4
-          %ul.list-group
-            %li.list-group-item Cras justo odio
-        / /.col-sm-4
-
-        .col-sm-4
-          .list-group
-            %a.list-group-item.active{:href => "#"}
-              Cras justo odio
-            %a.list-group-item{:href => "#"} Dapibus ac facilisis in
-
-        / /.col-sm-4
-        .col-sm-4
-          .list-group
-            %a.list-group-item.active{:href => "#"}
-              %h4.list-group-item-heading List group item heading
-              %p.list-group-item-text Donec id elit non mi metus
-        / /.col-sm-4
-      .page-header
-        %h1 Panels
-      .row
-        .col-sm-4
-          .panel.panel-default
-            .panel-heading
-              %h3.panel-title Panel title
-            .panel-body
-              Panel content
-          .panel.panel-primary
-            .panel-heading
-              %h3.panel-title Panel title
-            .panel-body
-              Panel content
-        / /.col-sm-4
-        .col-sm-4
-          .panel.panel-success
-            .panel-heading
-              %h3.panel-title Panel title
-            .panel-body
-              Panel content
-          .panel.panel-info
-            .panel-heading
-              %h3.panel-title Panel title
-            .panel-body
-              Panel content
-        / /.col-sm-4
-        .col-sm-4
-          .panel.panel-warning
-            .panel-heading
-              %h3.panel-title Panel title
-            .panel-body
-              Panel content
-          .panel.panel-danger
-            .panel-heading
-              %h3.panel-title Panel title
-            .panel-body
-              Panel content
-        / /.col-sm-4
-
-
-      .page-header
-        %h1 Wells
+        %h1 The First 24hr Barber
       .well
-        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.
+        %p Simply book a session on our bookings page, link above. And we do all the rest, arranging your session is filled with the best hair dressers and clean environment for you to relax.
+        = image_tag "barber.jpg"
     / /container
-    /
-      Bootstrap core JavaScript
-      \==================================================
-    / Placed at the end of the document so the pages load faster
-    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}
-    %script{src: "js/bootstrap.min.js"}
-    %script{src: "js/docs.min.js"}
