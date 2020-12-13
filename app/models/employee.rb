@@ -4,4 +4,5 @@ class Employee < ApplicationRecord
   validates :PhoneNumber, presence:true
 
   has_many :reservation
+  has_many :employees_email
 end

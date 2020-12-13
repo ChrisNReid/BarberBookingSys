@@ -8,18 +8,18 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get root_url
     assert_response :success
 
-    assert_select 'title','My Notes'
-    assert_select 'h1','My Notes'
-    assert_select 'p','Welcome to my notes site'
+    assert_select 'title','Booking'
+    assert_select 'h1','Barber Booking'
+    assert_select 'p','Booking your haircut today on our new online booking system.'
   end
 
   test "should get contact" do
     get contact_url
     assert_response :success
 
-    assert_template layout :'application'
+    assert_template layout:'application'
 
-    assert_select 'title','My Notes'
+    assert_select 'title','Booking'
     assert_select 'h1','Contact Us'
     assert_select 'p','Complete the following form to get in touch with us.'
   end

@@ -1,8 +1,13 @@
 require 'test_helper'
 
 class EmployeesEmailsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @employees_email = employees_emails(:one)
+    @employee = employees(:one)
+    @user = users(:one)
+    sign_in @user
   end
 
   test "should get index" do
@@ -17,7 +22,7 @@ class EmployeesEmailsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create employees_email" do
     assert_difference('EmployeesEmail.count') do
-      post employees_emails_url, params: { employees_email: { EmpEmail: @employees_email.EmpEmail, Employees_id: @employees_email.Employees_id } }
+      post employees_emails_url, params: { employees_email: { email: @employees_email.email + "create", employee_id: @employees_email.employee_id} }
     end
 
     assert_redirected_to employees_email_url(EmployeesEmail.last)
@@ -34,7 +39,7 @@ class EmployeesEmailsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update employees_email" do
-    patch employees_email_url(@employees_email), params: { employees_email: { EmpEmail: @employees_email.EmpEmail, Employees_id: @employees_email.Employees_id } }
+    patch employees_email_url(@employees_email), params: { employees_email: { email: @employees_email.email, employee_id: @employees_email.employee_id } }
     assert_redirected_to employees_email_url(@employees_email)
   end
 

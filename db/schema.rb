@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_11_190635) do
+ActiveRecord::Schema.define(version: 2020_12_13_190518) do
+
+  create_table "abouts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "employees", force: :cascade do |t|
     t.string "FirstName"
@@ -21,11 +26,12 @@ ActiveRecord::Schema.define(version: 2020_12_11_190635) do
   end
 
   create_table "employees_emails", force: :cascade do |t|
-    t.integer "Employees_id"
-    t.string "EmpEmail"
+    t.integer "employee_id"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Employees_id"], name: "index_employees_emails_on_Employees_id"
+    t.index ["email"], name: "index_employees_emails_on_email", unique: true
+    t.index ["employee_id"], name: "index_employees_emails_on_employee_id"
   end
 
   create_table "reservations", force: :cascade do |t|

@@ -1,23 +1,23 @@
-%h1 Listing employees_emails
-
-%table
-  %thead
-    %tr
-      %th Employees
-      %th Empemail
-      %th
-      %th
-      %th
-
-  %tbody
-    - @employees_emails.each do |employees_email|
+.container.theme-showcase{role: "main"}
+  .jumbotron
+    %h1 Listing Employee Emails
+    %p All Employee Emails in one place.
+  %table
+    %thead
       %tr
-        %td= employees_email.Employees
-        %td= employees_email.EmpEmail
-        %td= link_to 'Show', employees_email
-        %td= link_to 'Edit', edit_employees_email_path(employees_email)
-        %td= link_to 'Destroy', employees_email, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Email
+        %th
+        %th
+        %th
 
-%br
+    %tbody
+      - @employees_emails.each do |employees_email|
+        %tr
+          %td= employees_email.email
+          %td= link_to 'Show', employees_email
+          %td= link_to 'Edit', edit_employees_email_path(employees_email)
+          %td= link_to 'Destroy', employees_email, method: :delete, data: { confirm: 'Are you sure?' }
 
-= link_to 'New Employees email', new_employees_email_path
+  %br
+
+  = link_to 'New Employees email', new_employees_email_path

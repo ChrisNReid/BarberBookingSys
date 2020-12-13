@@ -14,8 +14,8 @@ class EmployeesEmailsTest < ApplicationSystemTestCase
     visit employees_emails_url
     click_on "New Employees Email"
 
-    fill_in "Empemail", with: @employees_email.EmpEmail
-    fill_in "Employees", with: @employees_email.Employees_id
+    fill_in "Email", with: @employees_email.email
+    fill_in "Employee", with: @employees_email.employee_id
     click_on "Create Employees email"
 
     assert_text "Employees email was successfully created"
@@ -26,8 +26,8 @@ class EmployeesEmailsTest < ApplicationSystemTestCase
     visit employees_emails_url
     click_on "Edit", match: :first
 
-    fill_in "Empemail", with: @employees_email.EmpEmail
-    fill_in "Employees", with: @employees_email.Employees_id
+    fill_in "Email", with: @employees_email.email
+    fill_in "Employee", with: @employees_email.employee_id
     click_on "Update Employees email"
 
     assert_text "Employees email was successfully updated"

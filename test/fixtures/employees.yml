@@ -3,9 +3,9 @@
 one:
   FirstName: MyString
   LastName: MyString
-  PhoneNumber: MyString
+  PhoneNumber: MyString1
 
 two:
   FirstName: MyString
   LastName: MyString
-  PhoneNumber: MyString
+  PhoneNumber: MyString2

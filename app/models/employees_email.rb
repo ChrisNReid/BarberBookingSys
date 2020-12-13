@@ -1,4 +1,3 @@
 class EmployeesEmail < ApplicationRecord
-  validates :Email, presence:true
-  belongs_to :Employees
+  belongs_to :employee
 end
