@@ -3,6 +3,6 @@ class Employee < ApplicationRecord
   validates :LastName, presence:true
   validates :PhoneNumber, presence:true
 
-  has_many :reservation
-  has_many :employees_email
+  has_many :reservation, dependent: :nullify
+  has_many :employees_email, dependent: :nullify
 end

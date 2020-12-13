@@ -4,8 +4,7 @@ class EmployeesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
   setup do
     @employee = employees(:one)
-    @user = users(:one)
-    sign_in @user
+  
   end
 
   test "should get index" do
