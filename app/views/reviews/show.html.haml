@@ -1,18 +1,21 @@
-%p#notice= notice
+.container.theme-showcase{role: "main"}
+  .jumbotron
+    %h1 Your Review
+    %p Thank you for sharing.
 
-%p
-  %b User:
-  = @review.user
-%p
-  %b Name:
-  = @review.name
-%p
-  %b Title:
-  = @review.title
-%p
-  %b Description:
-  = @review.description
+  %p#notice= notice
 
-= link_to 'Edit', edit_review_path(@review)
-\|
-= link_to 'Back', reviews_path
+
+  %p
+    %b Name:
+    = @review.name
+  %p
+    %b Title:
+    = @review.title
+  %p
+    %b Description:
+    = @review.description
+
+  = link_to 'Edit', edit_review_path(@review)
+  \|
+  = link_to 'Back', reviews_path
