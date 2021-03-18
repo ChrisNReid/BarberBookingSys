@@ -1,9 +1,9 @@
 # Barber Booking System 
-
+#1. Home Page
 <img src="1 (1).png" width="200">
-#2. 
+#2. About us Page
 <img src="1 (2).png" width="200">
-#3. 
+#3. Login Page
 <img src="1 (3).png" width="200">
 #4.
 <img src="1 (4).png" width="200">
