@@ -1,24 +1,11 @@
-# README
+# Barber Booking System 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<img src="1 (1).png" width="200">
+#2. Petitions page, using top right link
+<img src="1 (2).png" width="200">
+#3. Reading Page, using bottom right link
+<img src="1 (3).png" width="200">
+#4. Reading Page, using bottom right link
+<img src="1 (4).png" width="200">
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
