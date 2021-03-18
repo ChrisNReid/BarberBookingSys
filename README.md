@@ -1,5 +1,5 @@
 # Barber Booking System 
-#1.
+
 <img src="1 (1).png" width="200">
 #2. About us Page
 <img src="1 (2).png" width="200">
