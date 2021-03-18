@@ -11,9 +11,9 @@
 <img src="1 (5).png" width="200">
 #6. Reviews Page
 <img src="1 (6).png" width="200">
-#7. 
+#7. Sign Up Page
 <img src="1 (7).png" width="200">
-#8. 
+#8. Successful Order/Booking Page
 <img src="1 (8).png" width="200">
 
 
